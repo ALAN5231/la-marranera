@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta línea es la clave para que sea responsiva en celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Marranera</title>
+    <!-- Aquí conectamos nuestro CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Ícono de la pestaña del navegador -->
+    <link rel="icon" type="image/png" href="img/favicon.jfif">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO: barra superior con contacto y redes -->
+    <div class="topbar">
+        <div class="topbar-info">
+            <span class="topbar-item">
+                <!-- Cambia el número por el real de La Marranera -->
+                <img src="img/telefono.png" alt="Teléfono"><a href="tel:+520000000000">00-0000-0000</a></span>
+            <span class="topbar-item">
+                <!-- Cambia el correo por el real -->
+                <img src="img/correo.png" alt="Correo"><a href="mailto:correo@lamarranera.com">correo@lamarranera.com</a>
+            </span>
+        </div>
+
+        <div class="topbar-social">
+            <!-- Pega aquí los links reales de tus redes -->
+            <a href="#" target="_blank"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#" target="_blank"><img src="img/linkedin.png" alt="LinkedIn"></a>
+        </div>
+    </div>
+
+    <!-- BARRA DE MENÚ: ahora solo con dos enlaces -->
+    <header class="menu">
+        <a href="#inicio" class="logo">
+            <img src="img/lm_logo.png" alt="Logo La Marranera">
+        </a>
+        <nav class="menu-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Quiénes somos</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- INICIO: el gif de fondo con el logo al centro -->
+        <section id="inicio" class="inicio">
+            <h1>
+                <img src="img/marranera_fondo.png" alt="La Marranera">
+            </h1>
+        </section>
+
+        <!-- TEXTO: solo texto, sin imagen -->
+        <section id="nosotros" class="nosotros">
+            <div class="nosotros-texto reveal reveal-left">
+                <h2>¿Quiénes somos?</h2>
+                <!-- Aquí va tu texto real, estos son de relleno -->
+                <p>Texto de presentación de La Marranera.</p>
+                <p><strong>Lore ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER completo -->
+    <footer id="contacto" class="footer">
+        <div class="footer-container">
+
+            <!-- Columna 1: logo, descripción y redes -->
+            <div class="footer-col footer-about">
+                <!-- El CSS pone este logo en blanco automáticamente -->
+                <img src="img/logo_nyb.png" alt="Logo La Marranera" class="footer-logo">
+                <p>frase corta que describa a La Marranera.</p>
+                <p>Síguenos en nuestras redes sociales:</p>
+
+                <div class="footer-social">
+                    <a href="#" target="_blank" rel="noopener"><img src="img/facebook.png" alt="Facebook"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="#" target="_blank" rel="noopener"><img src="img/linkedin.png" alt="LinkedIn"></a>
+                </div>
+            </div>
+
+            <!-- Columna 2: servicios -->
+            <div class="footer-col footer-services">
+                <h3>Nuestros servicios</h3>
+                <ul>
+                    <li><a href="#">Servicio 1</a></li>
+                    <li><a href="#">Servicio 2</a></li>
+                    <li><a href="#">Servicio 3</a></li>
+                    <li><a href="#">Servicio 4</a></li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: contacto -->
+            <div class="footer-col footer-contact">
+                <h3>Contacto</h3>
+
+                <h4>Correo</h4>
+                <!-- mailto: abre la app de correo al dar clic -->
+                <p><a href="mailto:correo@lamarranera.com">correo@lamarranera.com</a></p>
+
+                <h4>Teléfono</h4>
+                <!-- tel: en celular permite llamar con un toque -->
+                <p><a href="tel:+520000000000">+52 00-0000-0000</a></p>
+            </div>
+
+        </div>
+
+        <!-- Línea de abajo con el copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Todos los derechos reservados por La Marranera</p>
+        </div>
+    </footer>
+
+    <!-- El JS va al final para que cargue después del contenido -->
+    <script src="script.js"></script>
+</body>
+
+</html>

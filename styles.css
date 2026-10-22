@@ -1,0 +1,357 @@
+/* Tipografía general de toda la página */
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0; /* quita el margen por defecto del navegador */
+}
+
+/* Scroll suave al hacer clic en el menú */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sin esto, el menú tapa el título de la sección al dar clic en un enlace */
+section {
+  scroll-margin-top: 100px;
+}
+
+/* ================= ENCABEZADO (TOPBAR) ================= */
+.topbar {
+  display: flex;
+  justify-content: space-between; /* info a la izquierda, redes a la derecha */
+  align-items: center;
+  padding: 6px 20px;
+  background-color: #3a3f47;      /* cambia el color a tu gusto */
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.topbar-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.topbar-info {
+  display: flex;
+  gap: 20px;                      /* separación entre teléfono y correo */
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;                       /* espacio entre icono y texto */
+}
+
+.topbar-item img {
+  width: 16px;
+  height: 16px;
+}
+
+.topbar-social {
+  display: flex;
+  gap: 12px;
+}
+
+.topbar-social img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.topbar-social a:hover img {
+  opacity: 0.7;
+}
+
+/* Responsivo: en pantallas chicas se apilan */
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+  }
+  .topbar-info {
+    gap: 12px;
+  }
+}
+
+/* ================= BARRA DE MENÚ ================= */
+.menu {
+  position: sticky;      /* se queda pegada arriba al bajar */
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #f1e9e9;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;   /* aquí controlas qué tan grande se ve el logo */
+  width: auto;    /* mantiene la proporción */
+  display: block;
+}
+
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;      /* separación entre enlaces */
+}
+
+.menu-links a {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  padding: 6px 2px;
+  border-bottom: 3px solid transparent;       /* rayita invisible por defecto */
+  transition: color 0.2s, border-color 0.2s;
+}
+
+/* Al pasar el mouse: aparece la rayita de color */
+.menu-links a:hover {
+  border-bottom-color: #1d5a8a;  /* cambia el color a tu gusto */
+}
+
+/* Responsivo: en celular el logo arriba y los enlaces abajo */
+@media (max-width: 900px) {
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+  .logo img {
+    height: 55px;
+  }
+  .menu-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+  .menu-links a {
+    font-size: 14px;
+  }
+  section {
+    scroll-margin-top: 150px;  /* el menú en celular es más alto */
+  }
+}
+
+/* ================= INICIO (GIF) ================= */
+.inicio {
+  background-image: url("img/fuegoo.gif"); /* pon aquí el nombre de tu gif */
+  background-size: cover;       /* el gif cubre todo el espacio sin deformarse */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Altura: toda la pantalla menos barra de info y menú */
+  height: calc(100vh - 130px);  /* si queda cortada o sobra espacio, ajusta el 130px */
+  min-height: 350px;
+
+  /* Centra el logo en medio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inicio h1 {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.inicio h1 img {
+  width: clamp(220px, 40vw, 600px);  /* mínimo 220px, máximo 600px, se adapta a la pantalla */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .inicio {
+    height: calc(100vh - 200px);   /* en celular el menú es más alto */
+  }
+}
+
+/* ================= TEXTO ================= */
+.nosotros {
+  padding: 60px 30px;
+  overflow: hidden;   /* evita scroll horizontal por la animación */
+}
+
+.nosotros-texto {
+  max-width: 800px;
+  margin: 0 auto;     /* centra el bloque de texto */
+}
+
+.nosotros-texto h2 {
+  font-size: 32px;
+  color: #1f2a44;
+  margin: 0 0 20px;
+}
+
+.nosotros-texto p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444444;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 800px) {
+  .nosotros-texto h2 {
+    font-size: 26px;
+  }
+}
+
+/* ================= ANIMACIÓN REVEAL ================= */
+/* Estado inicial: invisible y desplazado */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left  { transform: translateX(-50px); }  /* viene desde la izquierda */
+.reveal-right { transform: translateX(50px); }   /* viene desde la derecha */
+
+/* Cuando el JS le pone la clase "visible", llega a su lugar */
+.reveal.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background-color: #212429;
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;                /* en celular se acomodan una debajo de otra */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px 40px;
+}
+
+.footer-about {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.footer-services {
+  flex: 1 1 250px;
+}
+
+.footer-contact {
+  flex: 1 1 250px;
+}
+
+/* Este filtro convierte cualquier logo a blanco */
+.footer-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  margin-bottom: 25px;
+  filter: brightness(0) invert(1);
+}
+
+.footer p {
+  line-height: 1.7;
+  margin: 0 0 20px;
+}
+
+.footer-services h3,
+.footer-contact h3 {
+  font-size: 24px;
+  margin: 0 0 25px;
+}
+
+.footer-services ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-services li {
+  margin-bottom: 18px;
+}
+
+.footer-services a,
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-services a:hover {
+  color: #e9edf0;
+}
+
+.footer-contact a:hover {
+  color: #5aa9e6;
+}
+
+.footer-contact h4 {
+  font-size: 17px;
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+/* Cada red es un círculo de color */
+.footer-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;          /* esto lo hace circular */
+  background-color: #14507f;
+  transition: background-color 0.2s;
+}
+
+.footer-social a:hover {
+  background-color: #212429;
+}
+
+.footer-social img {
+  width: 22px;
+  height: 22px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #3a3f47;  /* línea delgada de separación */
+  text-align: center;
+  padding: 20px 30px 5px;
+}
+
+/* Responsivo: en celular todo centrado */
+@media (max-width: 700px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-about {
+    max-width: 100%;
+  }
+  .footer-logo {
+    margin-left: auto;
+    margin-right: auto;  /* centra el logo */
+  }
+  .footer-social {
+    justify-content: center;
+  }
+}
